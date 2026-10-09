@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaMart — Modern Luxury Online Shopping & Curated Essentials</title>
+  <meta name="description" content="Discover curated fashion, clean botanical beauty, architectural home decor, and handcrafted luxury accessories with complimentary worldwide shipping.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+
+  <!-- Top Announcement Bar -->
+  <aside class="announcement-bar" id="announcementBar" aria-label="Announcement">
+    <div class="container">
+      <div class="announcement-left">
+        <span class="announcement-badge">Limited Offer</span>
+        <span>Enjoy <strong>15% OFF</strong> your first order with code <strong>NOVA10</strong> &bull; Complimentary shipping over $75</span>
+      </div>
+      <div class="announcement-links">
+        <a href="contact.html">Support 24/7</a>
+        <span>&bull;</span>
+        <a href="shop.html">Track Order</a>
+        <button type="button" id="announcementDismiss" style="color: #cbd8ce; margin-left: 12px; font-size: 16px;" aria-label="Dismiss announcement">&times;</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Sticky Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <!-- Brand Logo -->
+        <a href="index.html" class="brand-logo" aria-label="NovaMart Home">
+          <div class="brand-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <span>Nova<span class="accent">Mart</span></span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="shop.html" class="nav-link">Shop</a></li>
+          <li><a href="categories.html" class="nav-link">Categories</a></li>
+          <li><a href="wishlist.html" class="nav-link">Wishlist</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- Action Buttons -->
+        <div class="header-actions">
+          <!-- Quick Search Button -->
+          <button type="button" class="header-action-btn" data-open-search aria-label="Search products" title="Search">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+
+          <!-- User Session Account Indicator -->
+          <div class="user-auth-indicator">
+            <a href="login.html" class="header-action-btn" title="Sign In" aria-label="Sign In">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </a>
+          </div>
+
+          <!-- Wishlist Counter Pill -->
+          <a href="wishlist.html" class="header-action-btn" aria-label="View Wishlist" title="Wishlist">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span class="counter-badge wishlist-badge" style="display: none;">0</span>
+          </a>
+
+          <!-- Cart Counter Pill -->
+          <a href="cart.html" class="header-action-btn" aria-label="View Shopping Cart" title="Shopping Cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <span class="counter-badge cart-badge" style="display: none;">0</span>
+          </a>
+
+          <!-- Mobile Nav Toggle Hamburger -->
+          <button type="button" class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open mobile menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNavDrawer">
+    <div class="mobile-nav-drawer">
+      <div class="mobile-nav-header">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <span>Nova<span class="accent">Mart</span></span>
+        </a>
+        <button type="button" class="btn-icon-only" id="mobileNavClose" aria-label="Close menu">&times;</button>
+      </div>
+      <ul class="mobile-nav-list">
+        <li class="mobile-nav-item"><a href="index.html" class="active">Home</a></li>
+        <li class="mobile-nav-item"><a href="shop.html">All Products</a></li>
+        <li class="mobile-nav-item"><a href="categories.html">Categories</a></li>
+        <li class="mobile-nav-item"><a href="wishlist.html">My Wishlist</a></li>
+        <li class="mobile-nav-item"><a href="cart.html">Shopping Cart</a></li>
+        <li class="mobile-nav-item"><a href="contact.html">Contact Us</a></li>
+        <li class="mobile-nav-item"><a href="login.html">My Account / Login</a></li>
+      </ul>
+      <div class="mobile-nav-footer">
+        <a href="shop.html" class="btn btn-primary btn-block">Shop All Catalog</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="search-modal-backdrop" id="searchModalBackdrop">
+    <div class="search-modal">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="modalSearchInput" placeholder="Search fashion, skincare, ceramics..." autocomplete="off">
+        <button type="button" id="searchModalClose" style="font-size: 20px; color: var(--text-light); padding: 4px;" aria-label="Close search">&times;</button>
+      </div>
+      <div class="search-results-dropdown" id="modalSearchResults">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-pill">
+              <span class="dot"></span>
+              <span>New Autumn & Winter 2026 Collection</span>
+            </div>
+            <h1 class="hero-title">
+              Effortless Luxury. <br>
+              <span class="highlight">Thoughtfully Curated</span> for Living.
+            </h1>
+            <p class="hero-description">
+              Experience handcrafted lifestyle essentials designed with pure materials, understated Scandinavian aesthetics, and sustainable ethical craftsmanship.
+            </p>
+            <div class="hero-cta-group">
+              <a href="shop.html" class="btn btn-primary btn-lg">
+                <span>Explore Catalog</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+              <a href="categories.html" class="btn btn-outline btn-lg">Browse Categories</a>
+            </div>
+            <div class="hero-trust-badges">
+              <div class="trust-item">
+                <div class="trust-number">48k+</div>
+                <div class="trust-label">Happy Global<br>Shoppers</div>
+              </div>
+              <div class="trust-item">
+                <div class="trust-number">4.9/5</div>
+                <div class="trust-label">Average Rating<br>Across Catalog</div>
+              </div>
+              <div class="trust-item">
+                <div class="trust-number">100%</div>
+                <div class="trust-label">Ethically<br>Sourced Materials</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-card-stack">
+              <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80" alt="NovaMart Editorial Model" class="hero-main-img" onerror="this.src='images/hero-fallback.jpg'">
+              
+              <!-- Floating Highlight Badge -->
+              <div class="hero-floating-badge">
+                <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-lime);">Season Spotlight</span>
+                <span style="font-weight: 800; font-size: 18px;">Up to 25% Off</span>
+              </div>
+
+              <!-- Floating Social Proof Card -->
+              <div class="hero-floating-card">
+                <div class="floating-avatar-group">
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Shopper Avatar" class="floating-avatar">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Shopper Avatar" class="floating-avatar">
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="Shopper Avatar" class="floating-avatar">
+                </div>
+                <div>
+                  <div style="font-size: 12px; font-weight: 700; color: var(--color-primary-dark);">Loved by 40,000+</div>
+                  <div style="font-size: 11px; color: var(--text-light);">Verified Customer Reviews</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Benefits Strip -->
+    <section class="benefits-section" aria-label="Store Benefits">
+      <div class="container">
+        <div class="benefits-grid">
+          <div class="benefit-item">
+            <div class="benefit-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <div>
+              <h3 class="benefit-title">Complimentary Shipping</h3>
+              <p class="benefit-text">Free express carbon-neutral delivery on all orders over $75.</p>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <h3 class="benefit-title">Secure & Transparent</h3>
+              <p class="benefit-text">Encrypted transactions and 100% genuine verified products.</p>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+            </div>
+            <div>
+              <h3 class="benefit-title">30-Day Hassle-Free Returns</h3>
+              <p class="benefit-text">Love your items or return them within 30 days for a full refund.</p>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div>
+              <h3 class="benefit-title">Dedicated 24/7 Concierge</h3>
+              <p class="benefit-text">Our customer care specialists are available around the clock.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Showcase -->
+    <section style="padding: var(--space-16) 0;" aria-label="Product Categories">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag lime">Curated Collections</span>
+          <h2 class="section-title">Shop by Category</h2>
+          <p class="section-subtitle">Explore hand-selected lifestyle essentials built around mindful living and uncompromising quality.</p>
+        </div>
+
+        <div class="category-preview-grid">
+          <a href="shop.html?category=Fashion" class="category-card">
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80" alt="Fashion Category" class="category-img">
+            <div class="category-card-overlay">
+              <h3 class="category-title">Fashion</h3>
+              <p class="category-subtitle">Relaxed linen, merino knitwear & silk</p>
+              <span class="category-link-pill">Explore Fashion &rarr;</span>
+            </div>
+          </a>
+
+          <a href="shop.html?category=Beauty" class="category-card">
+            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80" alt="Beauty Category" class="category-img">
+            <div class="category-card-overlay">
+              <h3 class="category-title">Beauty</h3>
+              <p class="category-subtitle">Active botanicals, facial elixirs & perfumes</p>
+              <span class="category-link-pill">Explore Beauty &rarr;</span>
+            </div>
+          </a>
+
+          <a href="shop.html?category=Home" class="category-card">
+            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80" alt="Home Category" class="category-img">
+            <div class="category-card-overlay">
+              <h3 class="category-title">Home</h3>
+              <p class="category-subtitle">Artisan ceramics, lighting & textured linens</p>
+              <span class="category-link-pill">Explore Home &rarr;</span>
+            </div>
+          </a>
+
+          <a href="shop.html?category=Accessories" class="category-card">
+            <img src="https://images.unsplash.com/photo-1509319117193-57bab727e09d?auto=format&fit=crop&w=800&q=80" alt="Accessories Category" class="category-img">
+            <div class="category-card-overlay">
+              <h3 class="category-title">Accessories</h3>
+              <p class="category-subtitle">Full-grain leather bags & vermeil jewelry</p>
+              <span class="category-link-pill">Explore Accessories &rarr;</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Bestsellers Section -->
+    <section style="padding: var(--space-12) 0 var(--space-16); background-color: var(--bg-subtle);" aria-label="Bestseller Products">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: var(--space-10); flex-wrap: wrap; gap: 16px;">
+          <div>
+            <span class="section-tag">Most Requested</span>
+            <h2 class="section-title">Featured Bestsellers</h2>
+            <p class="section-subtitle">Our most cherished designs, trusted and adored by our global community.</p>
+          </div>
+          <a href="shop.html" class="btn btn-outline">
+            <span>View All Products</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+
+        <div class="product-grid" id="featuredProductsGrid">
+          <!-- Rendered dynamically by page.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Promotional Deal Countdown Banner -->
+    <section class="promo-banner" aria-label="Promotional Offer">
+      <div class="container">
+        <div class="promo-banner-inner">
+          <div class="promo-banner-content">
+            <span class="section-tag lime" style="margin-bottom: 16px;">Flash Spotlight Event</span>
+            <h2>Limited Edition Autumn Capsule</h2>
+            <p>
+              Save 20% across our curated Home and Accessories collections this weekend. Each piece is crafted in small sustainable batches.
+            </p>
+            <div class="promo-countdown">
+              <div class="countdown-box">
+                <span class="countdown-num" id="countdownDays">02</span>
+                <span class="countdown-label">Days</span>
+              </div>
+              <div class="countdown-box">
+                <span class="countdown-num" id="countdownHours">14</span>
+                <span class="countdown-label">Hours</span>
+              </div>
+              <div class="countdown-box">
+                <span class="countdown-num" id="countdownMins">38</span>
+                <span class="countdown-label">Mins</span>
+              </div>
+              <div class="countdown-box">
+                <span class="countdown-num" id="countdownSecs">45</span>
+                <span class="countdown-label">Secs</span>
+              </div>
+            </div>
+            <div>
+              <a href="shop.html" class="btn btn-accent btn-lg">Shop The Capsule Now</a>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: center;">
+            <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=700&q=80" alt="Promotional Table Lamp" style="border-radius: var(--radius-lg); max-height: 380px; object-fit: cover; box-shadow: var(--shadow-lg);">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trending Products Grid -->
+    <section style="padding: var(--space-8) 0 var(--space-16);" aria-label="Trending Products">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: var(--space-10); flex-wrap: wrap; gap: 16px;">
+          <div>
+            <span class="section-tag lime">Just Arrived</span>
+            <h2 class="section-title">Trending This Season</h2>
+            <p class="section-subtitle">Fresh additions engineered for enduring modern lifestyles.</p>
+          </div>
+          <a href="shop.html" class="btn btn-outline">Browse Catalog</a>
+        </div>
+
+        <div class="product-grid" id="trendingProductsGrid">
+          <!-- Rendered dynamically by page.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Subscription Section -->
+    <section class="newsletter-section" aria-label="Newsletter Subscription">
+      <div class="container">
+        <div class="newsletter-card">
+          <span class="section-tag">NovaMart Privileges</span>
+          <h2 style="font-size: var(--font-size-2xl); margin-bottom: 8px;">Join Our Inner Circle</h2>
+          <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto;">
+            Receive exclusive seasonal previews, private designer trunk shows, and an instant <strong>15% welcome code</strong>.
+          </p>
+          <form class="newsletter-form" id="homeNewsletterForm">
+            <input type="email" class="newsletter-input" placeholder="Enter your email address..." required aria-label="Email address">
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+          <p style="font-size: 11px; color: var(--text-light);">We respect your privacy. Unsubscribe at any time with one click.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="color: #ffffff;">
+            <div class="brand-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <span>Nova<span class="accent">Mart</span></span>
+          </a>
+          <p>
+            An elevated retail destination celebrating intentional design, organic textures, and timeless quality across everyday life.
+          </p>
+          <div style="display: flex; gap: 12px;">
+            <a href="contact.html" class="btn-icon-only" style="background: rgba(255,255,255,0.08); border-color: transparent; color: #fff;" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="contact.html" class="btn-icon-only" style="background: rgba(255,255,255,0.08); border-color: transparent; color: #fff;" aria-label="Pinterest">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 .04-2.9l1.5-6.2s-.4-.8-.4-1.9c0-1.8 1-3.1 2.3-3.1 1.1 0 1.6.8 1.6 1.8 0 1.1-.7 2.7-1.1 4.2-.3 1.3.6 2.3 1.9 2.3 2.3 0 4-2.4 4-5.9 0-3.1-2.2-5.3-5.4-5.3-3.7 0-5.8 2.8-5.8 5.6 0 1.1.4 2.3 1 3 .1.1.1.2.1.4l-.4 1.5c0 .2-.2.3-.4.2-1.8-.8-2.9-3.3-2.9-5.3 0-4.3 3.1-8.3 9-8.3 4.8 0 8.5 3.4 8.5 7.9 0 4.7-3 8.5-7.1 8.5-1.4 0-2.7-.7-3.1-1.6l-.8 3.3c-.3 1.2-1.1 2.6-1.7 3.5A10 10 0 0 0 12 22a10 10 0 0 0 0-20z"/></svg>
+            </a>
+            <a href="contact.html" class="btn-icon-only" style="background: rgba(255,255,255,0.08); border-color: transparent; color: #fff;" aria-label="Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore Shop</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html">All Products</a></li>
+            <li><a href="shop.html?category=Fashion">Fashion & Apparel</a></li>
+            <li><a href="shop.html?category=Beauty">Clean Skincare & Beauty</a></li>
+            <li><a href="shop.html?category=Home">Architectural Home</a></li>
+            <li><a href="shop.html?category=Accessories">Luxury Accessories</a></li>
+            <li><a href="categories.html">Collections Directory</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Client Care</h4>
+          <ul class="footer-links">
+            <li><a href="cart.html">View Cart</a></li>
+            <li><a href="wishlist.html">Saved Wishlist</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+            <li><a href="contact.html">Contact & Concierge</a></li>
+            <li><a href="login.html">My Account</a></li>
+            <li><a href="register.html">Create Membership</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Store Concierge</h4>
+          <p style="font-size: 13px; color: #9cb2a6; margin-bottom: 12px;">
+            Flagship Atelier: 450 Madison Avenue, New York, NY 10022
+          </p>
+          <p style="font-size: 13px; color: #9cb2a6; margin-bottom: 6px;">
+            Email: <strong>concierge@novamart.com</strong>
+          </p>
+          <p style="font-size: 13px; color: #9cb2a6;">
+            Phone: <strong>+1 (800) 582-NOVA</strong>
+          </p>
+          <div style="margin-top: 16px;">
+            <span class="badge" style="background: rgba(132, 204, 22, 0.2); color: var(--color-lime);">Live Support Mon-Sun</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 NovaMart Inc. All rights reserved. Built with semantic HTML5, modern CSS3 &amp; vanilla JS.
+        </div>
+        <div class="footer-payment-icons">
+          <span class="payment-badge">VISA</span>
+          <span class="payment-badge">MASTERCARD</span>
+          <span class="payment-badge">AMEX</span>
+          <span class="payment-badge">APPLE PAY</span>
+          <span class="payment-badge">PAYPAL</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/page.js"></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create an Account — NovaMart Membership</title>
+  <meta name="description" content="Register for a NovaMart account to enjoy seamless checkout, order tracking, and private collection invites.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="register">
+
+  <!-- Announcement Bar -->
+  <aside class="announcement-bar" id="announcementBar" aria-label="Announcement">
+    <div class="container">
+      <div class="announcement-left">
+        <span class="announcement-badge">Welcome Gift</span>
+        <span>Register today to receive a 15% code for your first purchase</span>
+      </div>
+      <div class="announcement-links">
+        <a href="login.html">Already a Member?</a>
+        <button type="button" id="announcementDismiss" style="color: #cbd8ce; margin-left: 12px; font-size: 16px;" aria-label="Dismiss">&times;</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Sticky Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <a href="index.html" class="brand-logo" aria-label="NovaMart Home">
+          <div class="brand-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <span>Nova<span class="accent">Mart</span></span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="shop.html" class="nav-link">Shop</a></li>
+          <li><a href="categories.html" class="nav-link">Categories</a></li>
+          <li><a href="wishlist.html" class="nav-link">Wishlist</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="header-actions">
+          <button type="button" class="header-action-btn" data-open-search aria-label="Search products" title="Search">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+
+          <div class="user-auth-indicator">
+            <a href="login.html" class="header-action-btn" title="Sign In" aria-label="Sign In">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </a>
+          </div>
+
+          <a href="wishlist.html" class="header-action-btn" aria-label="View Wishlist" title="Wishlist">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span class="counter-badge wishlist-badge" style="display: none;">0</span>
+          </a>
+
+          <a href="cart.html" class="header-action-btn" aria-label="View Shopping Cart" title="Shopping Cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <span class="counter-badge cart-badge" style="display: none;">0</span>
+          </a>
+
+          <button type="button" class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open mobile menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay" id="mobileNavDrawer">
+    <div class="mobile-nav-drawer">
+      <div class="mobile-nav-header">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <span>Nova<span class="accent">Mart</span></span>
+        </a>
+        <button type="button" class="btn-icon-only" id="mobileNavClose" aria-label="Close menu">&times;</button>
+      </div>
+      <ul class="mobile-nav-list">
+        <li class="mobile-nav-item"><a href="index.html">Home</a></li>
+        <li class="mobile-nav-item"><a href="shop.html">All Products</a></li>
+        <li class="mobile-nav-item"><a href="categories.html">Categories</a></li>
+        <li class="mobile-nav-item"><a href="wishlist.html">My Wishlist</a></li>
+        <li class="mobile-nav-item"><a href="cart.html">Shopping Cart</a></li>
+        <li class="mobile-nav-item"><a href="contact.html">Contact Us</a></li>
+        <li class="mobile-nav-item"><a href="login.html">My Account</a></li>
+      </ul>
+      <div class="mobile-nav-footer">
+        <a href="shop.html" class="btn btn-primary btn-block">Shop All Catalog</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="search-modal-backdrop" id="searchModalBackdrop">
+    <div class="search-modal">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="modalSearchInput" placeholder="Search fashion, skincare, ceramics..." autocomplete="off">
+        <button type="button" id="searchModalClose" style="font-size: 20px; color: var(--text-light); padding: 4px;" aria-label="Close search">&times;</button>
+      </div>
+      <div class="search-results-dropdown" id="modalSearchResults"></div>
+    </div>
+  </div>
+
+  <!-- Register Form Main -->
+  <main class="auth-wrapper">
+    <div class="container" style="display: flex; justify-content: center;">
+      <div class="auth-card">
+        <div class="auth-header">
+          <div class="brand-icon" style="margin: 0 auto 16px; width: 44px; height: 44px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h1>Create an Account</h1>
+          <p style="font-size: 14px; color: var(--text-muted);">
+            Join the NovaMart community for curated benefits and private releases.
+          </p>
+        </div>
+
+        <div style="background: var(--bg-subtle); padding: 12px 16px; border-radius: var(--radius-md); font-size: 12px; color: var(--text-muted); margin-bottom: var(--space-6);">
+          <strong>Frontend Demonstration:</strong> No server or database is contacted. Submitting saves a mock profile to your local browser storage.
+        </div>
+
+        <form id="registerForm">
+          <div class="form-group">
+            <label class="form-label" for="regName">Full Legal Name *</label>
+            <input type="text" id="regName" class="form-input" placeholder="e.g. Jordan Miller" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="regEmail">Email Address *</label>
+            <input type="email" id="regEmail" class="form-input" placeholder="e.g. jordan@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="regPassword">Password (6+ characters) *</label>
+            <div class="password-input-wrapper">
+              <input type="password" id="regPassword" class="form-input" placeholder="••••••••" required>
+              <button type="button" class="password-toggle-btn" id="toggleRegPassword" aria-label="Toggle password visibility">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="regConfirmPassword">Confirm Password *</label>
+            <input type="password" id="regConfirmPassword" class="form-input" placeholder="••••••••" required>
+          </div>
+
+          <div style="margin: var(--space-4) 0 var(--space-6); font-size: 13px;">
+            <label style="display: flex; align-items: flex-start; gap: 8px; cursor: pointer;">
+              <input type="checkbox" id="regTerms" required style="margin-top: 3px;">
+              <span>I agree to the <a href="contact.html" style="color: var(--color-primary); font-weight: 600;">Terms of Service</a> and acknowledge the Privacy Guidelines.</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block btn-lg" id="registerSubmitBtn">
+            Complete Registration
+          </button>
+        </form>
+
+        <div class="auth-switch-link">
+          Already have a NovaMart profile?
+          <a href="login.html">Sign In Here</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="color: #ffffff;">
+            <div class="brand-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <span>Nova<span class="accent">Mart</span></span>
+          </a>
+          <p>An elevated retail destination celebrating intentional design, organic textures, and timeless quality across everyday life.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore Shop</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html">All Products</a></li>
+            <li><a href="shop.html?category=Fashion">Fashion</a></li>
+            <li><a href="shop.html?category=Beauty">Beauty</a></li>
+            <li><a href="shop.html?category=Home">Home</a></li>
+            <li><a href="shop.html?category=Accessories">Accessories</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Client Care</h4>
+          <ul class="footer-links">
+            <li><a href="cart.html">View Cart</a></li>
+            <li><a href="wishlist.html">Saved Wishlist</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+            <li><a href="contact.html">Contact & Concierge</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Store Concierge</h4>
+          <p style="font-size: 13px; color: #9cb2a6; margin-bottom: 6px;">Email: <strong>concierge@novamart.com</strong></p>
+          <p style="font-size: 13px; color: #9cb2a6;">Phone: <strong>+1 (800) 582-NOVA</strong></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 NovaMart Inc. All rights reserved.</div>
+        <div class="footer-payment-icons">
+          <span class="payment-badge">VISA</span>
+          <span class="payment-badge">MASTERCARD</span>
+          <span class="payment-badge">AMEX</span>
+          <span class="payment-badge">APPLE PAY</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/page.js"></script>
+</body>
+</html>

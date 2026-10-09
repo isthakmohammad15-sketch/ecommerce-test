@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Concierge — NovaMart</title>
+  <meta name="description" content="Reach our 24/7 dedicated customer concierge for inquiries regarding orders, styling advice, wholesale partnerships, and press.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="contact">
+
+  <!-- Announcement Bar -->
+  <aside class="announcement-bar" id="announcementBar" aria-label="Announcement">
+    <div class="container">
+      <div class="announcement-left">
+        <span class="announcement-badge">Client Care</span>
+        <span>Our global concierge team is available 24/7 for tailored assistance</span>
+      </div>
+      <div class="announcement-links">
+        <a href="shop.html">Browse Catalog</a>
+        <button type="button" id="announcementDismiss" style="color: #cbd8ce; margin-left: 12px; font-size: 16px;" aria-label="Dismiss">&times;</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Sticky Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <a href="index.html" class="brand-logo" aria-label="NovaMart Home">
+          <div class="brand-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <span>Nova<span class="accent">Mart</span></span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="shop.html" class="nav-link">Shop</a></li>
+          <li><a href="categories.html" class="nav-link">Categories</a></li>
+          <li><a href="wishlist.html" class="nav-link">Wishlist</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+
+        <div class="header-actions">
+          <button type="button" class="header-action-btn" data-open-search aria-label="Search products" title="Search">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+
+          <div class="user-auth-indicator">
+            <a href="login.html" class="header-action-btn" title="Sign In" aria-label="Sign In">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </a>
+          </div>
+
+          <a href="wishlist.html" class="header-action-btn" aria-label="View Wishlist" title="Wishlist">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span class="counter-badge wishlist-badge" style="display: none;">0</span>
+          </a>
+
+          <a href="cart.html" class="header-action-btn" aria-label="View Shopping Cart" title="Shopping Cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <span class="counter-badge cart-badge" style="display: none;">0</span>
+          </a>
+
+          <button type="button" class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open mobile menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay" id="mobileNavDrawer">
+    <div class="mobile-nav-drawer">
+      <div class="mobile-nav-header">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <span>Nova<span class="accent">Mart</span></span>
+        </a>
+        <button type="button" class="btn-icon-only" id="mobileNavClose" aria-label="Close menu">&times;</button>
+      </div>
+      <ul class="mobile-nav-list">
+        <li class="mobile-nav-item"><a href="index.html">Home</a></li>
+        <li class="mobile-nav-item"><a href="shop.html">All Products</a></li>
+        <li class="mobile-nav-item"><a href="categories.html">Categories</a></li>
+        <li class="mobile-nav-item"><a href="wishlist.html">My Wishlist</a></li>
+        <li class="mobile-nav-item"><a href="cart.html">Shopping Cart</a></li>
+        <li class="mobile-nav-item"><a href="contact.html" class="active">Contact Us</a></li>
+        <li class="mobile-nav-item"><a href="login.html">My Account</a></li>
+      </ul>
+      <div class="mobile-nav-footer">
+        <a href="shop.html" class="btn btn-primary btn-block">Shop All Catalog</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="search-modal-backdrop" id="searchModalBackdrop">
+    <div class="search-modal">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="modalSearchInput" placeholder="Search fashion, skincare, ceramics..." autocomplete="off">
+        <button type="button" id="searchModalClose" style="font-size: 20px; color: var(--text-light); padding: 4px;" aria-label="Close search">&times;</button>
+      </div>
+      <div class="search-results-dropdown" id="modalSearchResults"></div>
+    </div>
+  </div>
+
+  <!-- Contact Main Content -->
+  <main class="contact-section">
+    <div class="container">
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumbs">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span style="color: var(--color-primary-dark); font-weight: 700;">Client Concierge &amp; Contact</span>
+      </nav>
+
+      <div class="section-header text-center">
+        <span class="section-tag lime">Always Here For You</span>
+        <h1 class="section-title">Get in Touch With NovaMart</h1>
+        <p class="section-subtitle">
+          Whether you have sizing inquiries, order tracking questions, bespoke interior consultations, or press collaborations, our team is at your service.
+        </p>
+      </div>
+
+      <!-- Quick Contact Info Cards Grid -->
+      <div class="contact-cards-grid">
+        <div class="contact-card">
+          <div class="contact-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <h3 style="font-size: 16px; margin-bottom: 6px;">Email Concierge</h3>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">Direct response within 2 hours</p>
+          <a href="mailto:concierge@novamart.com" style="color: var(--color-primary); font-weight: 700; font-size: 14px;">concierge@novamart.com</a>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <h3 style="font-size: 16px; margin-bottom: 6px;">Telephone Support</h3>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">Toll-free customer assistance</p>
+          <a href="tel:+18005826682" style="color: var(--color-primary); font-weight: 700; font-size: 14px;">+1 (800) 582-NOVA</a>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3 style="font-size: 16px; margin-bottom: 6px;">Flagship Atelier</h3>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">450 Madison Avenue, 14th Fl</p>
+          <span style="color: var(--color-primary-dark); font-weight: 700; font-size: 14px;">New York, NY 10022</span>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 style="font-size: 16px; margin-bottom: 6px;">Consultation Hours</h3>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">Monday – Saturday</p>
+          <span style="color: var(--color-primary-dark); font-weight: 700; font-size: 14px;">9:00 AM – 8:00 PM EST</span>
+        </div>
+      </div>
+
+      <!-- Contact Layout (Form + Map/Studio details) -->
+      <div class="contact-layout-grid">
+        <!-- Contact Form Box -->
+        <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: var(--space-8); box-shadow: var(--shadow-sm);">
+          <h2 style="font-size: var(--font-size-2xl); margin-bottom: var(--space-2);">Send Us a Note</h2>
+          <p style="color: var(--text-muted); font-size: 14px; margin-bottom: var(--space-6);">
+            Have a question or feedback? Complete the form below and a representative will connect with you.
+          </p>
+
+          <!-- Simulated Success Banner -->
+          <div id="contactSuccessBanner" style="display: none; background: var(--color-success-bg); border: 1px solid #bbf7d0; border-radius: var(--radius-md); padding: 16px; margin-bottom: 20px; color: #15803d; font-size: 14px;">
+            <strong>&check; Message Received (Demo Mode):</strong> Thank you for contacting NovaMart. In this frontend demonstration, your submission has been recorded.
+          </div>
+
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="contactName">Your Full Name *</label>
+                <input type="text" id="contactName" class="form-input" placeholder="e.g. Taylor Reed" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contactEmail">Your Email Address *</label>
+                <input type="email" id="contactEmail" class="form-input" placeholder="e.g. taylor@example.com" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="contactDept">Inquiry Department *</label>
+                <select id="contactDept" class="form-select">
+                  <option value="orders">Orders &amp; Logistics</option>
+                  <option value="returns">Returns &amp; Exchanges</option>
+                  <option value="styling">Styling &amp; Sizing Advice</option>
+                  <option value="wholesale">Wholesale &amp; Press</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contactSubject">Subject</label>
+                <input type="text" id="contactSubject" class="form-input" placeholder="e.g. Sizing query for Linen Blazer">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactMessage">Detailed Message *</label>
+              <textarea id="contactMessage" class="form-textarea" rows="5" placeholder="How may our concierge assist your shopping journey today?" required></textarea>
+            </div>
+
+            <div style="margin-bottom: var(--space-6); font-size: 12px; color: var(--text-light);">
+              * Note: NovaMart is an interactive frontend demo prototype. No real messages are transmitted to an external mail server.
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" id="contactSubmitBtn">
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        <!-- Studio & Sustainability Card -->
+        <div style="display: flex; flex-direction: column; gap: var(--space-6);">
+          <div style="background: var(--color-primary-dark); color: #fff; border-radius: var(--radius-xl); padding: var(--space-8); box-shadow: var(--shadow-sm); position: relative; overflow: hidden;">
+            <div style="position: relative; z-index: 2;">
+              <span class="badge" style="background: rgba(132, 204, 22, 0.2); color: var(--color-lime); margin-bottom: 16px;">
+                Our Ethics Pledge
+              </span>
+              <h3 style="color: #fff; font-size: var(--font-size-xl); margin-bottom: 12px;">Zero Compromise Craft</h3>
+              <p style="color: #cbd8ce; font-size: 14px; line-height: 1.6; margin-bottom: 16px;">
+                We partner exclusively with certified organic agricultural co-ops and zero-emission studios throughout Portugal, Italy, and Japan.
+              </p>
+              <ul style="color: #e5ece6; font-size: 13px; display: flex; flex-direction: column; gap: 8px;">
+                <li>&check; 100% GOTS certified organic fibers</li>
+                <li>&check; Plastic-free circular packaging</li>
+                <li>&check; Fair wages for artisan cooperatives</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Studio Mockup Card -->
+          <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-sm);">
+            <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=800&q=80" alt="NovaMart Atelier Space" style="width: 100%; height: 200px; object-fit: cover;">
+            <div style="padding: var(--space-6);">
+              <h4 style="margin-bottom: 6px;">Visit our Private Atelier</h4>
+              <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">
+                Private 1-on-1 styling and material appointments available by reservation in our New York studio.
+              </p>
+              <a href="shop.html" class="btn btn-sm btn-outline">Explore Products Online &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Interactive Section -->
+      <section class="faq-section" aria-label="Frequently Asked Questions">
+        <div class="section-header text-center" style="margin-bottom: var(--space-8);">
+          <span class="section-tag">Help Center</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">Quick answers to common inquiries regarding orders, sizing, and deliveries.</p>
+        </div>
+
+        <div class="faq-item open">
+          <button type="button" class="faq-question">
+            <span>What are your domestic and international shipping times?</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s;"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            Orders within North America are delivered via standard carbon-neutral courier in 3–5 business days. Express courier arrives in 1–2 business days. International delivery takes 6–10 business days with all customs tariffs prepaid.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            <span>How does the 30-day return process work?</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s;"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            We provide complimentary prepaid return labels in every order parcel. Items must be in their unworn, unwashed original condition with tags attached. Once received, refunds are processed within 48 hours.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            <span>Are the cosmetic and skincare formulations cruelty-free?</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s;"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            Yes, 100%. All NovaMart beauty products carry official Leaping Bunny certification. They are vegan, sulfate-free, and formulated using cold-pressed therapeutic organic botanicals.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            <span>Is this a real live payment platform?</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s;"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            NovaMart is a high-fidelity frontend portfolio application created using semantic HTML5, modern CSS3, and vanilla JavaScript. All cart, wishlist, and demo checkout workflows run completely in client-side storage without processing financial transactions.
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="color: #ffffff;">
+            <div class="brand-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <span>Nova<span class="accent">Mart</span></span>
+          </a>
+          <p>An elevated retail destination celebrating intentional design, organic textures, and timeless quality across everyday life.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore Shop</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html">All Products</a></li>
+            <li><a href="shop.html?category=Fashion">Fashion</a></li>
+            <li><a href="shop.html?category=Beauty">Beauty</a></li>
+            <li><a href="shop.html?category=Home">Home</a></li>
+            <li><a href="shop.html?category=Accessories">Accessories</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Client Care</h4>
+          <ul class="footer-links">
+            <li><a href="cart.html">View Cart</a></li>
+            <li><a href="wishlist.html">Saved Wishlist</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+            <li><a href="contact.html">Contact & Concierge</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Store Concierge</h4>
+          <p style="font-size: 13px; color: #9cb2a6; margin-bottom: 6px;">Email: <strong>concierge@novamart.com</strong></p>
+          <p style="font-size: 13px; color: #9cb2a6;">Phone: <strong>+1 (800) 582-NOVA</strong></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 NovaMart Inc. All rights reserved.</div>
+        <div class="footer-payment-icons">
+          <span class="payment-badge">VISA</span>
+          <span class="payment-badge">MASTERCARD</span>
+          <span class="payment-badge">AMEX</span>
+          <span class="payment-badge">APPLE PAY</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/page.js"></script>
+</body>
+</html>

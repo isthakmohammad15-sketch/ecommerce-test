@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — NovaMart Secure Order</title>
+  <meta name="description" content="Complete your purchase with complimentary shipping and satisfaction guarantee.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="checkout">
+
+  <!-- Announcement Bar -->
+  <aside class="announcement-bar" id="announcementBar" aria-label="Announcement">
+    <div class="container">
+      <div class="announcement-left">
+        <span class="announcement-badge">Secure Checkout</span>
+        <span>Encrypted demo order submission &bull; No actual credit card or payment processed</span>
+      </div>
+      <div class="announcement-links">
+        <a href="cart.html">Edit Bag</a>
+        <button type="button" id="announcementDismiss" style="color: #cbd8ce; margin-left: 12px; font-size: 16px;" aria-label="Dismiss">&times;</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Sticky Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <a href="index.html" class="brand-logo" aria-label="NovaMart Home">
+          <div class="brand-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <span>Nova<span class="accent">Mart</span></span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="shop.html" class="nav-link">Shop</a></li>
+          <li><a href="categories.html" class="nav-link">Categories</a></li>
+          <li><a href="wishlist.html" class="nav-link">Wishlist</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="header-actions">
+          <button type="button" class="header-action-btn" data-open-search aria-label="Search products" title="Search">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+
+          <div class="user-auth-indicator">
+            <a href="login.html" class="header-action-btn" title="Sign In" aria-label="Sign In">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </a>
+          </div>
+
+          <a href="wishlist.html" class="header-action-btn" aria-label="View Wishlist" title="Wishlist">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span class="counter-badge wishlist-badge" style="display: none;">0</span>
+          </a>
+
+          <a href="cart.html" class="header-action-btn" aria-label="View Shopping Cart" title="Shopping Cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <span class="counter-badge cart-badge" style="display: none;">0</span>
+          </a>
+
+          <button type="button" class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open mobile menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay" id="mobileNavDrawer">
+    <div class="mobile-nav-drawer">
+      <div class="mobile-nav-header">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <span>Nova<span class="accent">Mart</span></span>
+        </a>
+        <button type="button" class="btn-icon-only" id="mobileNavClose" aria-label="Close menu">&times;</button>
+      </div>
+      <ul class="mobile-nav-list">
+        <li class="mobile-nav-item"><a href="index.html">Home</a></li>
+        <li class="mobile-nav-item"><a href="shop.html">All Products</a></li>
+        <li class="mobile-nav-item"><a href="categories.html">Categories</a></li>
+        <li class="mobile-nav-item"><a href="wishlist.html">My Wishlist</a></li>
+        <li class="mobile-nav-item"><a href="cart.html">Shopping Cart</a></li>
+        <li class="mobile-nav-item"><a href="contact.html">Contact Us</a></li>
+        <li class="mobile-nav-item"><a href="login.html">My Account</a></li>
+      </ul>
+      <div class="mobile-nav-footer">
+        <a href="shop.html" class="btn btn-primary btn-block">Shop All Catalog</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="search-modal-backdrop" id="searchModalBackdrop">
+    <div class="search-modal">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="modalSearchInput" placeholder="Search fashion, skincare, ceramics..." autocomplete="off">
+        <button type="button" id="searchModalClose" style="font-size: 20px; color: var(--text-light); padding: 4px;" aria-label="Close search">&times;</button>
+      </div>
+      <div class="search-results-dropdown" id="modalSearchResults"></div>
+    </div>
+  </div>
+
+  <!-- Checkout Main Section -->
+  <main class="checkout-section">
+    <div class="container">
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumbs">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="cart.html">Shopping Cart</a>
+        <span>/</span>
+        <span style="color: var(--color-primary-dark); font-weight: 700;">Checkout</span>
+      </nav>
+
+      <div style="margin-bottom: var(--space-8);">
+        <h1 style="font-size: var(--font-size-3xl); margin-bottom: 6px;">Express Checkout</h1>
+        <p style="color: var(--text-muted); font-size: var(--font-size-sm);">
+          Please provide your delivery destination and contact details below.
+        </p>
+      </div>
+
+      <!-- Demo Disclaimer Box -->
+      <div class="demo-disclaimer-box">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div>
+          <strong>Frontend Demonstration Store:</strong> No real payment is processed. You can enter any mock shipping details or simulated test card to experience the complete order confirmation flow.
+        </div>
+      </div>
+
+      <!-- Checkout 2-Column Grid -->
+      <div class="checkout-grid">
+        <!-- Left: Details Form -->
+        <form id="checkoutForm">
+          <!-- Contact Details -->
+          <div class="checkout-box">
+            <h2 style="font-size: var(--font-size-lg); margin-bottom: var(--space-5); display: flex; align-items: center; gap: 8px;">
+              <span style="width: 24px; height: 24px; border-radius: var(--radius-full); background: var(--color-primary); color: #fff; font-size: 12px; display: inline-flex; align-items: center; justify-content: center;">1</span>
+              Contact Information
+            </h2>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="checkoutEmail">Email Address *</label>
+                <input type="email" id="checkoutEmail" class="form-input" placeholder="alex@example.com" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="checkoutPhone">Phone Number *</label>
+                <input type="tel" id="checkoutPhone" class="form-input" placeholder="+1 (555) 019-2834" required>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shipping Address -->
+          <div class="checkout-box">
+            <h2 style="font-size: var(--font-size-lg); margin-bottom: var(--space-5); display: flex; align-items: center; gap: 8px;">
+              <span style="width: 24px; height: 24px; border-radius: var(--radius-full); background: var(--color-primary); color: #fff; font-size: 12px; display: inline-flex; align-items: center; justify-content: center;">2</span>
+              Shipping Destination
+            </h2>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="checkoutFirstName">First Name *</label>
+                <input type="text" id="checkoutFirstName" class="form-input" placeholder="Alex" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="checkoutLastName">Last Name *</label>
+                <input type="text" id="checkoutLastName" class="form-input" placeholder="Morgan" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="checkoutAddress">Street Address *</label>
+              <input type="text" id="checkoutAddress" class="form-input" placeholder="742 Evergreen Terrace, Suite 400" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="checkoutCity">City *</label>
+                <input type="text" id="checkoutCity" class="form-input" placeholder="New York" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="checkoutPostal">Postal Code *</label>
+                <input type="text" id="checkoutPostal" class="form-input" placeholder="10001" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="checkoutCountry">Country / Region *</label>
+              <select id="checkoutCountry" class="form-select" required>
+                <option value="United States">United States</option>
+                <option value="Canada">Canada</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Germany">Germany</option>
+                <option value="France">France</option>
+                <option value="Australia">Australia</option>
+                <option value="Japan">Japan</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Shipping Speed -->
+          <div class="checkout-box">
+            <h2 style="font-size: var(--font-size-lg); margin-bottom: var(--space-5); display: flex; align-items: center; gap: 8px;">
+              <span style="width: 24px; height: 24px; border-radius: var(--radius-full); background: var(--color-primary); color: #fff; font-size: 12px; display: inline-flex; align-items: center; justify-content: center;">3</span>
+              Delivery Method
+            </h2>
+
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <label style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border: 1.5px solid var(--border-medium); border-radius: var(--radius-md); cursor: pointer;">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <input type="radio" name="shipping_method" value="standard" checked>
+                  <div>
+                    <div style="font-weight: 700; font-size: 14px;">Standard Carbon-Neutral Delivery</div>
+                    <div style="font-size: 12px; color: var(--text-light);">3-5 business days</div>
+                  </div>
+                </div>
+                <strong style="color: var(--color-success);">FREE</strong>
+              </label>
+
+              <label style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border: 1.5px solid var(--border-medium); border-radius: var(--radius-md); cursor: pointer;">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <input type="radio" name="shipping_method" value="express">
+                  <div>
+                    <div style="font-weight: 700; font-size: 14px;">Express White-Glove Dispatch</div>
+                    <div style="font-size: 12px; color: var(--text-light);">1-2 business days with priority courier</div>
+                  </div>
+                </div>
+                <strong>$15.00</strong>
+              </label>
+            </div>
+          </div>
+
+          <!-- Demo Payment Method -->
+          <div class="checkout-box">
+            <h2 style="font-size: var(--font-size-lg); margin-bottom: var(--space-5); display: flex; align-items: center; gap: 8px;">
+              <span style="width: 24px; height: 24px; border-radius: var(--radius-full); background: var(--color-primary); color: #fff; font-size: 12px; display: inline-flex; align-items: center; justify-content: center;">4</span>
+              Payment Simulation
+            </h2>
+
+            <div class="payment-options-grid">
+              <div class="payment-card-option active" data-payment-method="card">
+                <div style="font-weight: 700; font-size: 13px;">Credit Card (Demo)</div>
+                <div style="font-size: 11px; color: var(--text-light);">Visa / MC / Amex</div>
+              </div>
+              <div class="payment-card-option" data-payment-method="paypal">
+                <div style="font-weight: 700; font-size: 13px;">PayPal (Demo)</div>
+                <div style="font-size: 11px; color: var(--text-light);">Fast Checkout</div>
+              </div>
+              <div class="payment-card-option" data-payment-method="cod">
+                <div style="font-weight: 700; font-size: 13px;">Pay On Delivery</div>
+                <div style="font-size: 11px; color: var(--text-light);">Cash / Card upon arrival</div>
+              </div>
+            </div>
+
+            <!-- Credit Card Mock Fields -->
+            <div id="creditCardFields">
+              <div class="form-group">
+                <label class="form-label" for="cardNum">Card Number (Simulated)</label>
+                <input type="text" id="cardNum" class="form-input" placeholder="4242 &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; 4242" value="4242 4242 4242 4242">
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="cardExp">Expiry Date</label>
+                  <input type="text" id="cardExp" class="form-input" placeholder="12/28" value="12/28">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="cardCvc">CVC Code</label>
+                  <input type="text" id="cardCvc" class="form-input" placeholder="987" value="987">
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: var(--space-6);">
+              <button type="submit" class="btn btn-primary btn-block btn-lg" id="placeOrderBtn">
+                <span>Place Demo Order</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Right: Order Summary Preview -->
+        <div>
+          <div class="cart-summary-box">
+            <h2 class="summary-title">Summary of Order</h2>
+            <div id="checkoutItemsList" style="margin-bottom: var(--space-4); max-height: 280px; overflow-y: auto;">
+              <!-- Populated by page.js -->
+            </div>
+
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span id="checkoutSubtotal" style="font-weight: 700;">$0.00</span>
+            </div>
+
+            <div class="summary-row">
+              <span>Delivery Cost</span>
+              <span id="checkoutShipping" style="font-weight: 700;">FREE</span>
+            </div>
+
+            <div class="summary-row total">
+              <span>Grand Total</span>
+              <span id="checkoutTotal">$0.00</span>
+            </div>
+
+            <div style="margin-top: var(--space-5); font-size: 11px; color: var(--text-light); text-align: center;">
+              Protected by 256-bit SSL simulated encryption protocol.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Demo Order Confirmation Modal -->
+  <div class="order-modal-backdrop" id="orderConfirmationModal">
+    <div class="order-modal-card">
+      <div class="order-success-icon">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h2 style="font-size: var(--font-size-2xl); margin-bottom: 8px;">Order Confirmed!</h2>
+      <p style="color: var(--text-muted); font-size: 14px; margin-bottom: var(--space-6);">
+        Thank you for shopping with NovaMart. Your order reference is <strong id="modalOrderId" style="color: var(--color-primary-dark);">NM-000000</strong>.
+      </p>
+
+      <div style="background: var(--bg-subtle); padding: 16px; border-radius: var(--radius-md); text-align: left; font-size: 13px; margin-bottom: var(--space-6);">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+          <span>Confirmation Sent To:</span>
+          <strong id="modalOrderEmail">shopper@example.com</strong>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+          <span>Estimated Delivery:</span>
+          <strong>3-5 Business Days</strong>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <span>Payment Status:</span>
+          <span style="color: var(--color-success); font-weight: 700;">Demo Approved &check;</span>
+        </div>
+      </div>
+
+      <p style="font-size: 12px; color: var(--text-light); margin-bottom: var(--space-6);">
+        This is a frontend demonstration. Your shopping cart has been reset.
+      </p>
+
+      <button type="button" class="btn btn-primary btn-block" id="modalCloseBtn">
+        Return to Home &amp; Continue Shopping
+      </button>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="color: #ffffff;">
+            <div class="brand-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <span>Nova<span class="accent">Mart</span></span>
+          </a>
+          <p>An elevated retail destination celebrating intentional design, organic textures, and timeless quality across everyday life.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore Shop</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html">All Products</a></li>
+            <li><a href="shop.html?category=Fashion">Fashion</a></li>
+            <li><a href="shop.html?category=Beauty">Beauty</a></li>
+            <li><a href="shop.html?category=Home">Home</a></li>
+            <li><a href="shop.html?category=Accessories">Accessories</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Client Care</h4>
+          <ul class="footer-links">
+            <li><a href="cart.html">View Cart</a></li>
+            <li><a href="wishlist.html">Saved Wishlist</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+            <li><a href="contact.html">Contact & Concierge</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Store Concierge</h4>
+          <p style="font-size: 13px; color: #9cb2a6; margin-bottom: 6px;">Email: <strong>concierge@novamart.com</strong></p>
+          <p style="font-size: 13px; color: #9cb2a6;">Phone: <strong>+1 (800) 582-NOVA</strong></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 NovaMart Inc. All rights reserved.</div>
+        <div class="footer-payment-icons">
+          <span class="payment-badge">VISA</span>
+          <span class="payment-badge">MASTERCARD</span>
+          <span class="payment-badge">AMEX</span>
+          <span class="payment-badge">APPLE PAY</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/page.js"></script>
+</body>
+</html>
